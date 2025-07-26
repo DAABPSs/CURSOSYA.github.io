@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mis Cursos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Mis Cursos Online</h1>
+  <form id="curso-form">
+    <input type="text" id="nombre" placeholder="Nombre del curso" required />
+    <input type="text" id="categoria" placeholder="Categoría (opcional)" />
+    <input type="url" id="url" placeholder="Link (opcional)" />
+    <input type="date" id="fecha-inicio" placeholder="Fecha de inicio" />
+    <input type="date" id="fecha-fin" placeholder="Fecha de finalización" />
+    <button type="submit">Agregar Curso</button>
+  </form>
+
+  <div id="cursos-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
