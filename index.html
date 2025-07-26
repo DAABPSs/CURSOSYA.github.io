@@ -1,24 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mis Cursos</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+.export-btn, .import-label {
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.import-label {
+  background-color: #555;
+}
+  </style>
 </head>
 <body>
-  <h1>Mis Cursos Online</h1>
-  <form id="curso-form">
-    <input type="text" id="nombre" placeholder="Nombre del curso" required />
-    <input type="text" id="categoria" placeholder="Categoría (opcional)" />
-    <input type="url" id="url" placeholder="Link (opcional)" />
-    <input type="date" id="fecha-inicio" placeholder="Fecha de inicio" />
-    <input type="date" id="fecha-fin" placeholder="Fecha de finalización" />
-    <button type="submit">Agregar Curso</button>
-  </form>
+  <div class="header">
+    <h1>Mis Cursos</h1>
+    <div style="margin-top: 1rem;">
+      <button onclick="exportarCursos()" class="export-btn">Exportar .json</button>
+      <label class="import-label">
+        Importar .json
+        <input type="file" onchange="importarCursos(event)" style="display:none;" />
+      </label>
+    </div>
+  </div>
+  <div class="container" id="course-list"></div>
 
-  <div id="cursos-container"></div>
+  <div class="footer">
+    <button onclick="agregarCurso()">Agregar Curso</button>
+  </div>
 
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
